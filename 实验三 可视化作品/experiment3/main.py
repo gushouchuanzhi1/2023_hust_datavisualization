@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 import seaborn as sns
+import tkinter
 
 
 def draw1(df):  # 绘制2019年各省份订购数量饼图
@@ -15,6 +16,7 @@ def draw1(df):  # 绘制2019年各省份订购数量饼图
             textprops={'fontproperties': myfont})
     plt.title('2019年各省份订购数量图', fontproperties=myfont)
     plt.savefig('out//2019年各省份订购数量饼图.png')
+    plt.show()
     plt.close()
     # plt.show()
 
@@ -30,6 +32,7 @@ def draw2(df):  # 绘制2019年各地区订购数量饼图
             textprops={'fontproperties': myfont})
     plt.title('2019年各地区订购数量图', fontproperties=myfont)
     plt.savefig('out//2019年各地区订购数量饼图.png')
+    plt.show()
     plt.close()
     # plt.show()
 
@@ -49,6 +52,7 @@ def draw3(df):  # 各月份的订购数量变化折线图
     plt.ylabel('订购数量', fontsize=14, fontproperties=myfont)
     plt.ticklabel_format(style='plain', axis='y')
     plt.savefig('out//各月份的总化妆品订购数量变化折线图')
+    plt.show()
     plt.close()
 
 
@@ -66,8 +70,9 @@ def draw4(df):
                 textprops={'fontproperties': myfont}, colors=colors)
         plt.title(f'{region}购买商品的商品小类分布', fontsize=14, fontproperties=myfont)
         plt.savefig(f'out//商品小类分布//{region}购买商品的商品小类分布')
+        plt.show()
         plt.close()
-        # plt.show()
+
 
 
 def draw5(df):
@@ -92,6 +97,7 @@ def draw5(df):
         plt.ticklabel_format(style='plain', axis='y')  # 避免使用科学计数法
         plt.xticks(rotation=45, fontproperties=myfont)
         plt.savefig(f'out//商品编号在商品小类//2019年{category}订购数量统计图')
+        plt.show()
         plt.close()
 
 
@@ -114,6 +120,7 @@ def draw6(df):
         plt.tick_params(axis='x', labelrotation=45)
         plt.xticks(rotation=45, fontproperties=myfont)
         plt.savefig(f'out//商品小类订购数量//{category}的各省份订购数量条形图.png')
+        plt.show()
         plt.close()  # 关闭当前图表，避免下一次循环时重叠
 
 
@@ -138,6 +145,7 @@ def draw7(df):  # 条形图
     plt.ticklabel_format(style='plain', axis='y')  # 避免使用科学计数法
     plt.xticks(rotation=45, fontproperties=myfont)  # 旋转 x 轴刻度标签，使其更易读
     plt.savefig('out//2019年各商品小类订购数量统计图.png')
+    plt.show()
     plt.close()
 
 
@@ -163,6 +171,7 @@ def draw8(df):  # 折线图
     plt.ticklabel_format(style='plain', axis='y')  # 避免使用科学计数法
     plt.legend(prop=myfont)
     plt.savefig('out//2019年各商品小类每月订购变化图')
+    plt.show()
     plt.close()
 
 
@@ -171,6 +180,7 @@ if __name__ == '__main__':
     df1 = pd.read_excel(file_path, sheet_name=0)
     df2 = pd.read_excel(file_path, sheet_name=1)
     merged_df = pd.merge(df1, df2, on='商品编号', how='inner')
+    '''
     draw1(df1)  # 绘制2019年各省份订购数量饼图
     draw2(df1)
     draw3(df1)
@@ -179,3 +189,4 @@ if __name__ == '__main__':
     draw6(merged_df)
     draw7(merged_df)
     draw8(merged_df)
+'''
