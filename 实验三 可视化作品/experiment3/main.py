@@ -9,13 +9,12 @@ def draw1(df):  # 绘制2019年各省份订购数量饼图
     # 统计各省份数量
     province_counts = df['所在省份'].value_counts()
     myfont = FontProperties(fname=r'G:\code\simfang.ttf')
-
     # 绘制饼图
     plt.figure(figsize=(8, 8))
     plt.pie(province_counts, labels=province_counts.index, autopct='%1.1f%%', startangle=45,
             textprops={'fontproperties': myfont})
-    plt.title('2019年各省份订购数量图', fontproperties=myfont)
-    plt.savefig('out//2019年各省份订购数量饼图.png')
+    plt.title('2019年各省份总订购数量图', fontproperties=myfont)
+    plt.savefig('out//2019年各省份总订购数量饼图.png')
     plt.show()
     plt.close()
     # plt.show()
@@ -30,8 +29,8 @@ def draw2(df):  # 绘制2019年各地区订购数量饼图
     plt.figure(figsize=(8, 8))
     plt.pie(province_counts, labels=province_counts.index, autopct='%1.1f%%', startangle=45,
             textprops={'fontproperties': myfont})
-    plt.title('2019年各地区订购数量图', fontproperties=myfont)
-    plt.savefig('out//2019年各地区订购数量饼图.png')
+    plt.title('2019年各地区总订购数量图', fontproperties=myfont)
+    plt.savefig('out//2019年各地区总订购数量饼图.png')
     plt.show()
     plt.close()
     # plt.show()
